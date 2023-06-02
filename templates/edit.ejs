@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit link</h1>
+    <form action="/edit/<%=body.id%>" method="POST">     <!--também posso usar o required que ai não deixa o usuário tentar salvar sem preencher-->
+        <input class="field" name="title" placeholder="Title" value="<%=body.title%>" >
+        <input class="field" name="description" placeholder="Description" value="<%=body.description%>">
+        <input class="field" name="url" placeholder="URL" value="<%=body.url%>" >
+        <button>Editar</button>
+    </form>
+
+    <%if(err){%>
+        <h3><%=err.message%></h3>
+    <%}%>
+
+
+</body>
+</html>
