@@ -15,7 +15,7 @@ const addLink= async (req,res)=>{
     let link= new Link(req.body)
     try{
         let doc= await link.save()
-        res.send('Link adicionado')
+        res.redirect('/')  
     }catch(err){
         res.render('add', {err, body: req.body})
     }
